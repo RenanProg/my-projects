@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">logo</a>
+        <ul>
+            <li>
+                <a href="#" class="active">inicio</a>
+                <a href="#">Sobre</a>
+                <a href="#">projetos</a>
+                <a href="#">contato</a>
+
+            </li>
+        </ul>
+    </header>  
+    <section>
+        <img src="imagens/stars.png" id="stars">
+        <img src="imagens/lua.png" id="moon">
+        <img src="imagens/montanha.png" id="montanha">
+        <h2 id="text">luz da lua</h2>
+        <a href="#sec" id="btn">Mais</a>
+        <img src="imagens/fundo.png" id="fundo">
+        
+    </section> 
+    <div class="sec" id="sec">
+        <h2>parallax scrooling effects</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dicta dolor molestias et, quisquam saepe sunt odio distinctio perspiciatis ea earum modi dignissimos aliquam sapiente perferendis, facilis consequuntur dolore. Molestiae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident deserunt tempora ad aspernatur. Molestiae placeat autem corporis quasi architecto ea voluptatum doloribus, commodi aliquid quod praesentium odio voluptate, et maiores. <br><br> ipsum dolor sit, amet consectetur adipisicing elit. Magni enim error optio, fuga necessitatibus minus rerum harum cumque id nostrum excepturi, voluptas a veritatis. Blanditiis saepe animi sunt iure quibusdam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis aliquam iste fugit, maxime harum cum consectetur culpa, cupiditate eveniet dolorem voluptatem distinctio, voluptate quia saepe inventore provident. Dolorum, nesciunt nam!<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga illum reiciendis necessitatibus illo voluptatibus sit voluptatem ad at tempore enim. Dolorem ut alias quasi aliquam assumenda quis quae illum odit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, autem? Dicta quasi nostrum modi molestiae adipisci nam, cumque, rem tempora aperiam tempore inventore, accusamus ut iure repellendus pariatur voluptatem totam!
+        </p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars')
+        let lua = document.getElementById('lua')
+        let montanha = document.getElementById('montanha')
+        let text = document.getElementById('text')
+        let btn = document.getElementById('btn')
+        let fundo = document.getElementById('fundo')
+        let header = document.querySelector('header');
+        
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            montanha.style.top = value * 0.5 + 'px';
+            fundo.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px'
+        })
+    </script>
+</body>
+</html>
